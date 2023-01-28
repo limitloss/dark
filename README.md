@@ -21,15 +21,10 @@ Generate, score, and design massive numbers of hallucinated protein sequences wi
 
 
 In this first initial release we provide code and models for generating sequences from DARK models, calculating the IG-score of sequences, and predicting structure with Alphafold (v2.0). 
-I'll be quickly adding in (*hopefully*, @limitloss' thesis pemitting) the additional code for the remaining aspects of the project such as hallucinating/refining sequences, 
-with either simulated annealing, backprop with a step-through operator, or both together.
-Those are currently in the process of being refactored for release with the code contained herein.
-
-We will also update with instructions, once we've sorted out hosting, for downloading the different datasets of hallucinated sequences that are used as training sets, along with any AlphaFold2 predicted structures, pLDDTs, etc.
 
 The models, code, and data here are described in the preprint *Design in the Dark: Learning Deep Generative Models for De Novo Protein Design* [on bioRxiv](https://www.biorxiv.org/content/10.1101/2022.01.27.478087v1) 
 and *Using AlphaFold for Rapid and Accurate Fixed Backbone Protein Design* also [on bioRxiv](https://www.biorxiv.org/content/10.1101/2021.08.24.457549v1).
-
+Some scripts and data are yet to be added, see the *To Do* section at the bottom of the README. 
 
 ## Requirements
 
@@ -196,6 +191,19 @@ Only the best predicted structure by average pLDDT score is relaxed with OpenMM 
 The input file can be a FASTA file or a sequence file, such as that produced by the `generate.py` script. The input file extension is used to judge file type.
 If the input file contains several sequences then, by default, only the first sequence is used. 
 
+
+## To Do:
+
+I'll be quickly adding in (*hopefully*, @limitloss' thesis pemitting) the additional code for the remaining aspects of the project such as hallucinating/refining sequences, 
+with either simulated annealing, backprop with a step-through operator, or both together.
+Those are currently in the process of being refactored for release with the code contained herein.
+We will also update with instructions, once we've sorted out hosting, for downloading the different datasets of hallucinated sequences that are used as training sets (as previously described above), along with any AlphaFold2 predicted structures, pLDDTs, etc.
+
+- [ ] Test `predict_structure.py` in newest version of the AlphaFold2 repository.  
+- [ ] Add greedy and MCMC fixed-backbone AlphaFold2 optimization script and AlphaFold2 hallucination script.  
+- [ ] Add DMP2 gradient-based hallucination and greedy hill-climbing hallucination scripts, including refinement and dual options.
+- [ ] Include updated links to the sequence, structure prediction, and pLDDT datasets for variable length and static length datasets. 
+- [ ] Include variable length + topology conditional DARK model scripts with parameter downloads.    
 
 ## Changelog
 
