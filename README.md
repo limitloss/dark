@@ -41,7 +41,7 @@ For predicting structures using the provided AlphaFold script please see [the Al
 
 Clone the directory
 
-```bash
+```console
 git clone https://github.com/limitloss/dark
 cd dark
 ```
@@ -51,7 +51,7 @@ The `wget` has extra steps to get around the google-drive big file warning.
 This is downloading model parameters as `dark_params.tar.gz`, which is 1GB. 
 We also download the background distribution which is a bit smaller (4MB) and doesn't need the work around.  
 
-```bash
+```console
 wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1zIRHlZfWalhKnMl7olcbTDhPgczJBcmc' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1zIRHlZfWalhKnMl7olcbTDhPgczJBcmc" -O dark_params.tar.gz && rm -rf /tmp/cookies.txt
 md5sum dark_params.tar.gz
 tar -xvzf dark_params.tar.gz
@@ -87,7 +87,7 @@ The oracle model itself is in `dark/score/oracle.py`.
 
 Sequences from DARK models are generated with `generate.py`. Below is the output from running with the `--help` flag:
 
-```bash
+```console
 usr@machine:~$ python generate.py --help
 usage: generate.py [-h] [-n n] [-d d] [-b b] samples
 
@@ -111,7 +111,7 @@ This early version assumes the number of samples requested is evenly divisible b
 Below is a minimal example of running the model and generating 10 sequences which are written to a text file `test.txt`. 
 A pre-generated version of the file is in the [example](./example/test.txt) directory.
 
-```bash
+```console
 usr@machine:~$ python generate.py 10 > test.txt
 ```
 Each sequence is on a new line. Standard behavoir is for the output to be written to stdout. 
@@ -122,7 +122,7 @@ Generated sequences are scored with `score.py`, which prints the IG-score for ea
 Input is a text file with each sequence on a newline. 
 Here are the outputs of running with the `--help` flag:
   
-```bash
+```console
 usr@machine:~$ python score.py --help
 usage: score.py [-h] [-d d] [--stats] seqs
 
@@ -140,12 +140,12 @@ output --> stdout
 ```
 
 Usage in simplest case:
-```bash
+```console
 usr@machine:~$ python score.py test.txt
 ```
 This prints the scores of each sequence onto a new line. The test.txt is the same as generated in the previous section.
 If you'd like the mean and standard deviation of the scores of a sequences in a file then:
-```bash
+```console
 usr@machine:~$ python score.py test.txt --stats
 ```
 The scoring function in this version assumes sequence length is 100 amino acids as in the work for simplicity.  
@@ -158,7 +158,7 @@ AlphaFold directory to be used. Note, this has been tested and used with the ear
 The extent to which it works effectively with the most current version of the repo is not yet tested. 
 The following is the output with the `--help` flag:
 
-```bash
+```console
 usr@machine:~$ python predict_structure.py --help
 usage: predict_structure.py [-h] seqfile outpath prefix
 
@@ -179,7 +179,7 @@ output --> refined structure (.pdb), per amino acid pLDDT (.npy)
 Two files are output using the naming convention `<prefix>_relaxed.pdb` for the predicted structure and `<prefix>_plddt.npy` 
 for the per-amino-acid pLDDT scores as a numpy binary. 
 Here is an example of running the script with a FASTA file called `test.fas`: 
-```bash
+```console
 python predict_structure.py test.fas /out/dir/ seq
 ```
 This writes two files to the `/out/dir/` directory, being `seq_relaxed.pdb` and `seq_plddt.npy`. 
