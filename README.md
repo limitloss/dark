@@ -159,7 +159,9 @@ The scoring function in this version assumes sequence length is 100 amino acids 
 ## Predicting Structure with AlphaFold
 
 The script we provide for predicting structure of a single sequence (`alpha/predict_structure.py`) should be copied into the top level
-AlphaFold directory to be used. The following is the output with the `--help` flag:
+AlphaFold directory to be used. Note, this has been tested and used with the earliest release versions of the AlphaFold2 repository. 
+The extent to which it works effectively with the most current version of the repo is not yet tested. 
+The following is the output with the `--help` flag:
 
 ```bash
 usr@machine:~$ python predict_structure.py --help
