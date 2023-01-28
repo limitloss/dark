@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Custom 
+ignore.txt
+*.tar.gz
+params/
+bkgd/
+*.npy
+*.pt
+
+
+
+
+
