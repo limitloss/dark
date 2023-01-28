@@ -65,7 +65,7 @@ tar -xvzf dark_bkgd.tar.gz
 The compressed directory file should have the following MD5 hash: `cae1df84d64e6500510abbd8899097ea`, using `md5sum`.
 The hash for the background file is `aafbdf3655e5e0856c89e771ad861d7f`.
 Uncompressed the params tar leaves you with a `params/` directory containing four different models, taking up about 1.1GB of space. 
-If you have python and Pytorch installed you should be ready to go. 
+If you have python, Pytorch, and fast-transformers installed you should be ready to go. 
 
 ## Downloading data
 
