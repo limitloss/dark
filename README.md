@@ -209,9 +209,13 @@ We will also update with instructions, once we've sorted out hosting, for downlo
 
 For a log of recent changes please see the changelog in [CHANGELOG.md](./CHANGELOG.md). This is currently being updated manually by [@limitloss](https://github.com/limitloss).
 
-## Changelog
+## Citing
 
 If you do use the contents of this repo in your work, we'd really appreciate a citation with [CITATION.bib](./CITATION.bib).
+
+## Contributing
+
+Although this repo is based on the work in [the preprints](https://www.biorxiv.org/content/10.1101/2022.01.27.478087v1), if you'd like to build on anything here, fix a bug, whatever it maybe, don't hesitate to contribute and submit a pull request!
 
 ## Contact
 
