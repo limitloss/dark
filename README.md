@@ -26,6 +26,8 @@ The models, code, and data here are described in the preprint *Design in the Dar
 and *Using AlphaFold for Rapid and Accurate Fixed Backbone Protein Design* also [on bioRxiv](https://www.biorxiv.org/content/10.1101/2021.08.24.457549v1).
 Some scripts and data are yet to be added, see the *To Do* section at the bottom of the README. 
 
+**First dataset has been added! (7/Feb/2023)**
+
 ## Requirements
 
 The following were used to develop DARK models and should be all you need: 
