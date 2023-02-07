@@ -2,7 +2,7 @@
 
 <p align="center">
 	<a href="CHANGELOG.md">
-        <img src="https://img.shields.io/badge/version-1.0.0-green?style=flat-square&logo=appveyor.svg" alt="Version">
+        <img src="https://img.shields.io/badge/version-1.1.0-green?style=flat-square&logo=appveyor.svg" alt="Version">
     </a>
     <a href="LICENSE">
         <img src="https://img.shields.io/badge/license-GPL--3.0-blue?style=flat-square&logo=appveyor.svg" alt="GPL-3.0 License">
@@ -26,7 +26,7 @@ The models, code, and data here are described in the preprint *Design in the Dar
 and *Using AlphaFold for Rapid and Accurate Fixed Backbone Protein Design* also [on bioRxiv](https://www.biorxiv.org/content/10.1101/2021.08.24.457549v1).
 Some scripts and data are yet to be added, see the *To Do* section at the bottom of the README. 
 
-**First dataset has been added! (7/Feb/2023)**
+**First dataset has been added! (7/Feb/2023, v1.1.0)**
 
 ## Requirements
 
@@ -256,7 +256,7 @@ Please don't hesitate to reach out, either via:
 
 [changelog]: ./CHANGELOG.md
 [license]: ./LICENSE
-[version-badge]: https://img.shields.io/badge/version-1.0.0-green?style=flat-square&logo=appveyor.svg
+[version-badge]: https://img.shields.io/badge/version-1.1.0-green?style=flat-square&logo=appveyor.svg
 [license-badge]: https://img.shields.io/badge/license-GPL--3.0-blue?style=flat-square&logo=appveyor.svg
 
 
