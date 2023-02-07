@@ -56,7 +56,7 @@ wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download
 md5sum dark_params.tar.gz
 tar -xvzf dark_params.tar.gz
 
-wget https://docs.google.com/uc?export=download&id=1TNlkGbjv3SnRRFXQY7993OtIv95A9mU8
+wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1TNlkGbjv3SnRRFXQY7993OtIv95A9mU8' -O dark_bkgd.tar.gz
 md5sum dark_bkgd.tar.gz
 tar -xvzf dark_bkgd.tar.gz
 
@@ -69,9 +69,35 @@ If you have python, Pytorch, and fast-transformers installed you should be ready
 
 ## Downloading data
 
-*Coming Soon...*: I am currently sorting out hosting and then it will be linked to here. 
-In total there's over half a million hallucinated sequences and good number have AlphaFold2 predicted structures and pLDDT scores.
-A majority are 100 residues long but there is also a smaller dataset of variable length sequences. 
+The first dataset is available covering over half a million hallucinated sequences.
+
+First Data Release: 
+ - 500000 Hallucinated Sequences, 100 residues long, the training set of the DARK3 model.
+ - 950 example validation set and 950 example test set.
+
+These are in `.txt` files with one sequence per line. 
+I ripped them out of the original FASTA files to keep file size lower but I move it back soon. 
+These links are very fiddly so if they break please do raise and issue or get in touch.
+
+
+Also, very importantly, the test set and validation set here is extremely weakly split compared to the gold standard when working with natural protein sequences (splitting by structural classification).
+The coming next release will have much better, though not perfect, train-test splits based on predicted structure classification. 
+
+### The data 
+
+Just `cd` into your DARK directory if you're not already and run the below to download the first dataset:
+```console
+wget --no-check-certificate 'https://drive.google.com/uc?export=download&id=1iYlM8498RFrAA2o3agqXbRsZWo58fqoi' -O dark_data.tar.gz
+md5sum dark_data.tar.gz
+tar -xvzf dark_data.tar.gz
+```
+The MD5 hash of the compressed directory is: `6e2c27387895e7e4b542e9e2794954a2`. This will give you a `data/` directory with a single (for now) `seq_basic/` subdirectory containing the sequences.
+Additional data in the future will be added to separate sub directories here.
+
+### Remaining data
+
+**Coming Soon...:** The remaining datasets consisting of, for example, 100K AlphaFold2 structures (and an additional 1900 structures from the test and validation sets) and pLDDT predictions. 
+There is also the same with variable length sequences, with different train-test splits as mentioned above, and different generation methods.
 
 
 ## Running DARK
