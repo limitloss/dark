@@ -67,7 +67,13 @@ tar -xvzf dark_bkgd.tar.gz
 The compressed directory file should have the following MD5 hash: `cae1df84d64e6500510abbd8899097ea`, using `md5sum`.
 The hash for the background file is `aafbdf3655e5e0856c89e771ad861d7f`.
 Uncompressed the params tar leaves you with a `params/` directory containing four different models, taking up about 1.1GB of space. 
-If you have python, Pytorch, and fast-transformers installed you should be ready to go. 
+If you have python, Pytorch, and fast-transformers installed you should be ready to go.
+
+Something to note on why the `wget` calls are a bit gnarly: they're using `--no-check-certificate` to sidestep google drive's assumption that you're opening the link in a browser and trying to download the files manually. 
+For bigger files, like the parameter tarball, we have to temporarily precache cookies to get around the 'This file is too big to preview' drive warning. 
+If google changes things and it breaks the above commands please raise an issue if I haven't updated things.
+The actual drive links in the commands should always work in the browser though, barring big Drive changes etc. 
+ 
 
 ## Downloading data
 
